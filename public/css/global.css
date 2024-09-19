@@ -1,0 +1,1231 @@
+html, body{
+  margin: 0;
+  padding: 0;
+  z-index: 0;
+}
+
+
+/*header*/
+header{
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    height: 10vh;
+}
+.menu1{
+  display: none;
+}
+.toggle{
+  display: none;
+}
+#checkbox{
+  display: none;
+}
+.menu-header{
+  color: #000000;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: "Lulo Clean One Bold";
+  transition: font-size 0.5s ease, color 0.5s ease; /* Applique la transition sur la taille et la couleur */
+}
+.menu{
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.slide-up{
+  margin: auto;
+  animation: Up 0.5s;
+  z-index: 2;
+}
+.formulaire{
+  z-index: 1;
+  position: fixed;
+  bottom: 20px;
+  right: 0;
+  cursor: pointer;
+  animation: left 0.5s ease;
+}
+@keyframes Up{
+  0%{
+    opacity: 0.25;
+    transform: translateY(-30px);
+  }
+  25%{
+    opacity: 0.5;
+    transform: translateY(-20px);
+  }
+  50%{
+    opacity: 0.75;
+    transform: translateY(-10px);
+  }
+  75%{
+    opacity: 1;
+    transform: translateY(-5px);
+  }
+  100%{
+    transform: translateY(-0px);
+  }
+}
+.menu-header:hover{
+  font-size:17px;
+  color: #7f2e3a;
+}
+#nom{
+  color: #000000;
+  margin-left: 15px;
+  font-family: "Lulo Clean One Bold"; 
+}
+.reseau-sociaux{
+  margin-right: 15px;
+}
+.reseau-sociaux>a>img{
+  height: 32px;
+}
+
+
+/*page accueil*/
+.dessin-accueil{
+  position: absolute;
+  height: 100%;
+  width: auto;
+  top: 0;
+  left: 0;
+  z-index: 15;
+}
+#titre-accueil{
+  font-family: "Lulo Clean One Bold";
+  color: #000000;
+  font-size: 55px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+}
+
+
+/*.arrowsWrap {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+} 
+.arrowsWrap>.arrows>img {
+  width: 60px;
+  margin: auto;
+  display: block;
+  animation: moveDown 1s infinite alternate;
+} 
+@keyframes moveDown {
+  0% {
+      transform: translateY(0);
+  }
+  100% {
+      transform: translateY(20px); 
+  } 
+}*/
+/*
+<a target="_blank" href="https://icons8.com/icon/32309/instagram">Instagram</a> icône par <a target="_blank" href="https://icons8.com">Icons8</a> blanc 
+<a target="_blank" href="https://icons8.com/icon/37326/youtube">Youtube</a> icône par <a target="_blank" href="https://icons8.com">Icons8</a> blanc
+<a target="_blank" href="https://icons8.com/icon/8808/linkedin">LinkedIn</a> icône par <a target="_blank" href="https://icons8.com">Icons8</a> blanc
+
+<a target="_blank" href="https://icons8.com/icon/37326/youtube">Youtube</a> icône par <a target="_blank" href="https://icons8.com">Icons8</a> noir
+<a target="_blank" href="https://icons8.com/icon/59813/instagram">Instagram</a> icône par <a target="_blank" href="https://icons8.com">Icons8</a> noir
+<a target="_blank" href="https://icons8.com/icon/8808/linkedin">LinkedIn</a> icône par <a target="_blank" href="https://icons8.com">Icons8</a> noir
+*/
+
+
+/*vueAnimation*/
+.carousel-container {
+  z-index: 0;
+  margin-top: 10px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 90vh;
+}
+.carousel-track {
+  display: flex;
+  transition: transform 1.25s ease;
+}
+.carousel-animation {
+  display: inline-flex;
+  flex: 0 0 100%;
+  justify-content: center;
+}
+.carousel-animation-description{
+  font-family: "Lulo Clean One Bold";
+  padding-left: 20px;
+  animation: left 0.5s ease;
+}
+.lireplus {
+  max-height: 0px; 
+  overflow: hidden; 
+  transition: max-height 0.5s ease; 
+}
+.lireplusmoins{
+  font-size: 12.5px;
+  display: block;
+  color: #007bff;
+  cursor: pointer;
+}
+.lireplusmoins:hover{
+  font-size: 13px;
+  transition: font-size 0.4s ease;
+}
+@keyframes left {
+  0%{
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  25%{
+    transform: translateX(-50px);
+  }
+  75%{
+    transform: translateX(-10px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateX(-0px);
+  }
+}
+.titre{
+  margin: 0;
+  border-bottom: 3px solid #7f2e3a;
+}
+.pdescription{
+  font-size: 10px;
+  margin: 0;
+}
+.vertical{
+  height: 40%;
+}
+.animation {
+  padding-right: 10px;
+  border-right: 3px solid #7f2e3a;
+  width: 100%;
+}
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgb(0, 0, 0);
+  border: none;
+  height: 85px;
+  font-size: 35px;
+  width: 35px;
+  padding: 5px;
+  cursor: pointer;
+}
+.prev {
+  animation: moveLeft 0.75s infinite alternate;
+  left: 10px;
+}
+.next {
+  animation: moveRight 0.75s infinite alternate;
+  right: 30px;
+}
+@keyframes moveLeft {
+  0% {
+      transform: translateX(0);
+  }
+  100% {
+      transform: translateX(-5px); 
+  } 
+}
+@keyframes moveRight {
+  0% {
+      transform: translateX(0);
+  }
+  100% {
+      transform: translateX(5px); 
+  } 
+}
+
+
+
+/*vueIllustration*/
+.carousel-illustration {
+  z-index: 0;
+  display: inline-flex;
+  flex: 0 0 100%; 
+  height: 80vh;
+  justify-content: center;
+}
+.carousel-illustration-description{
+  font-family: "Lulo Clean One Bold";
+  padding-left: 20px; 
+  animation: left 0.5s ease;
+}
+.illustration  {
+  padding-right: 10px;
+  border-right: 4px solid #7f2e3a;
+  cursor: pointer;
+}
+.verticali{
+  height: 100%;
+}
+.carre{
+  height: 100%;
+}
+.agrandir {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #7f2e3a83;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+.agrandir>img {
+  max-width: 100%;
+  max-height: 100%;
+  cursor: pointer;
+}
+.hidden {
+  display: none;
+}
+
+
+
+
+
+/*vue about*/
+.pageabout{
+  z-index: 0;
+  margin-left: 5%;
+}
+.titreabout{
+  font-family: "Lulo Clean One Bold";
+  font-size: 17px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: justify;
+  border-top: 2px solid #7f2e3a;
+}
+.paragrapheabout{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  text-align: justify;
+  width: 90%;
+}
+.listeabout{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  text-align: justify;
+  width: 90%;
+}
+.lien{
+  color: #007bff;
+  cursor: pointer;
+}
+
+
+
+
+/*vue Work school*/
+ul.slides {
+  display: block;
+  position: relative;
+  height: 90vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  list-style: none;
+}
+
+.slides * {
+  user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+ul.slides input {
+  display: none; 
+}
+
+
+.slide-container { 
+  display: block; 
+}
+
+.slide-image {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  opacity: 0;
+  transition: all .7s ease-in-out;
+}   
+
+.slide-image>img{
+  width: auto;
+  min-width: 100%;
+  height: 100%;
+}
+
+.carousel-work-description{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 75%;
+  margin: auto;
+}
+.titrework{
+  font-size: 50px;
+  font-family: "Lulo Clean One Bold";
+  border-bottom: 3px solid #7f2e3a;
+  margin: 0;
+}
+
+.paragraphework{
+  font-size: 10px;
+  margin-top: 25px;
+  text-align: justify;
+  font-family: "Lulo Clean One Bold";
+}
+
+.titre2work{
+  font-size: 20px;
+  font-family: "Lulo Clean One Bold";
+}
+
+.downloadwork{
+  font-size: 15px;
+  font-family: "Lulo Clean One Bold";
+  margin: auto;
+  width: 25%;
+  border-top: 3px solid #7f2e3a;
+}
+.downloadwork>a{
+  padding: 10px;
+}
+
+.carousel-dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+  text-align: center;
+}
+
+.carousel-dots .carousel-dot {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #7f2e3a;
+  opacity: 0.5;
+  margin: 12px;
+}
+
+input:checked + .slide-container .slide-image {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.1s ease-in-out;
+  animation: left 1s ease;
+}
+
+input:checked + .slide-container .carousel-controls label {
+   display: block; 
+}
+
+input#img-1:checked ~ .carousel-dots label#img-dot-1,
+input#img-2:checked ~ .carousel-dots label#img-dot-2,
+input#img-3:checked ~ .carousel-dots label#img-dot-3{
+opacity: 1;
+}
+
+
+
+
+/*formulaire*/
+input[type=text], textarea, input[type=email] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  margin-right: 0px;
+  margin-left: 0px;
+  resize: vertical;
+}
+label{margin-right: 0px;
+  margin-left: 0px;
+  width: 100%;}
+
+input[type=submit] {
+  background-color: #7f2e3a;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+input[type=submit]:hover {
+  background-color:  #993948;
+}
+
+
+.container {
+  font-family: "Lulo Clean One Bold";
+  box-sizing : border-box;
+  border-radius:5px;
+  background-color:#f2f2f2;
+  padding:20px;
+  /* redéfinition 400 + 2*20 */
+  max-width: 440px;
+  margin:0 auto;
+}
+.titreformulaire  {
+  color: #000000;
+  font-size: 20px;
+  width: 100%;
+}
+
+.erreur{
+  color: rgb(192, 57, 52) ;
+  font-size: 10px;
+  margin: 0;
+}
+
+
+
+
+
+
+
+
+@media only screen and (min-width:400px) and (orientation: portrait){
+header{
+  z-index: 0;
+}
+.querytelpad {
+  display: none;
+}
+
+#checkbox{
+  display: none; /*on applique un display none pour ne pas montrer notre input qui nous servira a, selon si il est activer ou non de, faire la transition avec la croix*/
+}
+.toggle {
+  position: absolute;
+  top : 1%;
+  right: 4%;
+  width: 30px; 
+  height: 30px; 
+  cursor: pointer; /*lorsqu'on survole le button, notre curseur change de style*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px; /*Espace entre les barres*/
+}
+.bars {
+  width: 100%;
+  height: 3px; 
+  background-color: rgb(0, 0, 0);
+  border-radius: 5px;
+  transition-duration: .3s; /*on applique un temps de 0.3s entre le moment ou le button est en style croix, et le moment ou il est style burger*/
+}
+#checkbox:checked + .toggle #bar1 { /*on vÃƒÂ©rifie si le checkbox est valide pour ensuite pouvoir appliquer la transformation*/
+  transform: rotate(-45deg);/*on dÃƒÂ©finit que la barre tourne de -45deg*/
+  transition-duration: .3s; /*on applique un temps de 0.3s entre le moment ou le button est en style burger, et le moment ou il est style croix*/
+  transform-origin: right;
+}
+#checkbox:checked + .toggle #bar2 {
+  opacity: 0;/*on applique une opacitÃƒÂ© de 0 pour cacher la deuxieme bar et crÃƒÂ©er notre croix*/
+  transition-duration: .3s;/*on applique un temps de 0.3s entre le moment ou le button est en style burger, et le moment ou il est style croix*/
+}
+#checkbox:checked + .toggle #bar3 {
+  transform: translateY(1px) rotate(45deg);/*on dÃƒÂ©finit que la barre tourne de 45deg et qu'elle se place 1px vers le haut pour s'aligner a la 1ere barre*/
+  transform-origin: right;/*on dÃƒÂ©finit que les rotations se feront en rapport sur l'axe de droite*/
+  transition-duration: .3s;/*on applique un temps de 0.3s entre le moment ou le button est en style burger, et le moment ou il est style croix*/
+}
+.menu1{
+  display: none; /*on cache notre page menu*/
+  z-index: 100;
+}
+.active{
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.5);/*on applique un arriere plan assombri pour que le teste et le button soit visible*/
+  backdrop-filter: blur(15px); /*on applique un flou au fond d'ÃƒÂ©cran*/
+  height: 100vh;  
+  width: 100vh;
+}
+
+.menuactiver{ /*on dÃƒÂ©finit que la profondeur du button est supÃƒÂ©rieur Ãƒ  la page menu pour faire en sorte qu'il soit visible*/ 
+    position: absolute;
+    z-index: 2;
+}
+.menu-header{
+  font-size: 20px;
+  font-family: "Lulo Clean One Bold";
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+.menu2{
+  display: inline-flex;
+  flex-direction: column;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.formulaire{
+  bottom: 0;
+  right: 0;
+  background-color: rgba(240, 248, 255, 0.74);
+}
+
+/*page accueil*/
+.dessin-accueil{
+  position: absolute;
+  height: 75%;
+  width: auto;
+  top: 25%;
+  z-index: -1;
+}
+#titre-accueil{
+  text-align: center;
+  font-size: 45px;
+  top: 25%;
+}
+
+
+/*vueAnimation*/
+.carousel-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.carousel-animation {
+  display: block;
+}
+.animation {
+  padding-right: 10px;
+  border-right: 3px solid #7f2e3a;
+  width: 100%;
+}
+.nav {
+  position: absolute;
+  top: 80%;
+  transform: translateY(-50%);
+  color: #7f2e3a;
+  border: none;
+  height: 85px;
+  font-size: 35px;
+  width: 35px;
+  padding: 5px;
+  cursor: pointer;
+}
+.next {
+  right: 10px;
+}
+
+
+
+/*vueIllustration*/
+.carousel-illustration {
+  display: block;
+}
+.carousel-illustration-description{
+  font-family: "Lulo Clean One Bold";
+  padding-left: 20px; 
+  animation: left 0.5s ease;
+}
+.illustration  {
+  padding-right: 10px;
+  border-right: none;
+  width: 100%;
+}
+
+
+
+
+input[type=submit] {
+  background-color: #7f2e3a;
+}
+}
+
+
+
+
+@media only screen and (max-width:800px) and (orientation: landscape){
+header{
+  z-index: 0;
+}
+.querytelpad {
+  display: none;
+}
+
+#checkbox{
+  display: none; /*on applique un display none pour ne pas montrer notre input qui nous servira a, selon si il est activer ou non de, faire la transition avec la croix*/
+}
+.toggle {
+  position: absolute;
+  top : 1%;
+  right: 4%;
+  width: 30px; 
+  height: 30px; 
+  cursor: pointer; /*lorsqu'on survole le button, notre curseur change de style*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px; /*Espace entre les barres*/
+}
+.bars {
+  width: 100%;
+  height: 3px; 
+  background-color: rgb(0, 0, 0);
+  border-radius: 5px;
+  transition-duration: .3s; /*on applique un temps de 0.3s entre le moment ou le button est en style croix, et le moment ou il est style burger*/
+}
+#checkbox:checked + .toggle #bar1 { /*on vÃƒÂ©rifie si le checkbox est valide pour ensuite pouvoir appliquer la transformation*/
+  transform: rotate(-45deg);/*on dÃƒÂ©finit que la barre tourne de -45deg*/
+  transition-duration: .3s; /*on applique un temps de 0.3s entre le moment ou le button est en style burger, et le moment ou il est style croix*/
+  transform-origin: right;
+}
+#checkbox:checked + .toggle #bar2 {
+  opacity: 0;/*on applique une opacitÃƒÂ© de 0 pour cacher la deuxieme bar et crÃƒÂ©er notre croix*/
+  transition-duration: .3s;/*on applique un temps de 0.3s entre le moment ou le button est en style burger, et le moment ou il est style croix*/
+}
+#checkbox:checked + .toggle #bar3 {
+  transform: translateY(1px) rotate(45deg);/*on dÃƒÂ©finit que la barre tourne de 45deg et qu'elle se place 1px vers le haut pour s'aligner a la 1ere barre*/
+  transform-origin: right;/*on dÃƒÂ©finit que les rotations se feront en rapport sur l'axe de droite*/
+  transition-duration: .3s;/*on applique un temps de 0.3s entre le moment ou le button est en style burger, et le moment ou il est style croix*/
+}
+.menu1{
+  display: none; /*on cache notre page menu*/
+  z-index: 100;
+}
+.active{
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.5);/*on applique un arriere plan assombri pour que le teste et le button soit visible*/
+  backdrop-filter: blur(15px); /*on applique un flou au fond d'ÃƒÂ©cran*/
+  height: 100vh;  
+  width: 100%;
+}
+
+.menuactiver{ /*on dÃƒÂ©finit que la profondeur du button est supÃƒÂ©rieur Ãƒ  la page menu pour faire en sorte qu'il soit visible*/ 
+    position: absolute;
+    z-index: 2;
+}
+.menu-header{
+  font-size: 15px;
+  font-family: "Lulo Clean One Bold";
+  padding-top: 17px;
+  padding-bottom: 17px;
+}
+.menu2{
+  display: inline-flex;
+  flex-direction: column;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.formulaire{
+  bottom: 88%;
+  right: 75%;
+}
+
+/*page accueil*/
+.dessin-accueil{
+  position: absolute;
+  height: 100%;
+  width: auto;
+  top: 0;
+  z-index: -1;
+}
+#titre-accueil{
+  text-align: center;
+  font-size: 45px;
+  top: 25%;
+}
+
+
+/*vueAnimation*/
+.animation {
+  padding-right: 10px;
+  border-right: 3px solid #7f2e3a;
+  width: 100%;
+}
+.nav {
+  position: absolute;
+  top: 80%;
+  transform: translateY(-50%);
+  color: #7f2e3a;
+  border: none;
+  height: 85px;
+  font-size: 35px;
+  width: 35px;
+  padding: 5px;
+  cursor: pointer;
+}
+.next {
+  right: 10px;
+}
+
+
+
+/*vueIllustration*/
+.carousel-illustration-description{
+  font-size: 13px;
+}
+.illustration  {
+  padding-right: 10px;
+  border-right: none;
+  width: 100%;
+  height: auto;
+}
+.verticali{
+  height: 100%;
+  width: auto;
+}
+.carre{
+  height: 100%;
+}
+
+input[type=submit] {
+  background-color: #7f2e3a;
+}
+}
+
+
+
+
+@media only screen and (max-width:1200px) and (orientation: landscape){
+header{
+  z-index: 0;
+}
+.menu-header{
+  font-size: 16.5px;
+}
+.menu{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.formulaire{
+  font-size: 20px;
+}
+
+/*page accueil*/
+.dessin-accueil{
+  position: absolute;
+  height: 100%;
+  width: auto;
+  top: 0;
+  z-index: -1;
+}
+#titre-accueil{
+  text-align: center;
+  font-size: 55px;
+  top: 50%;
+}
+
+
+/*vueAnimation*/
+.animation {
+  padding-right: 10px;
+  border-right: 3px solid #7f2e3a;
+  width: 100%;
+}
+.vertical{
+  height: 45%;
+}
+.nav {
+  position: absolute;
+  top: 80%;
+  transform: translateY(-50%);
+  color: #7f2e3a;
+  border: none;
+  height: 85px;
+  font-size: 35px;
+  width: 35px;
+  padding: 5px;
+  cursor: pointer;
+}
+.next {
+  right: 10px;
+}
+
+
+
+/*vueIllustration*/
+.illustration  {
+  padding-right: 10px;
+  border-right: 4px solid #7f2e3a;
+  cursor: pointer;
+  height: auto;
+  width: 100%;
+}
+.verticali{
+  height: 100%;
+  width: auto;
+}
+#illustration5{
+  height: 100%;
+}
+
+input[type=submit] {
+  background-color: #7f2e3a;
+}
+
+/*vue work*/
+.titrework{
+  font-size: 40px;
+}
+
+.paragraphework{
+  font-size: 10px;
+  top: 5%;
+}
+
+.titre2work{
+  font-size: 15px;
+  text-align: center;
+}
+
+.downloadwork{
+  font-size: 15px;
+}
+}
+
+
+
+@media only screen and (min-width:800px) and (orientation: portrait){
+header{
+  z-index: 0;
+}
+.querytelpad {
+  display: none;
+}
+
+#checkbox{
+  display: none; /*on applique un display none pour ne pas montrer notre input qui nous servira a, selon si il est activer ou non de, faire la transition avec la croix*/
+}
+.toggle {
+  position: absolute;
+  top : 1%;
+  right: 4%;
+  width: 60px; 
+  height: 60px; 
+  cursor: pointer; /*lorsqu'on survole le button, notre curseur change de style*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px; /*Espace entre les barres*/
+}
+.bars {
+  width: 100%;
+  height: 6px; 
+  background-color: rgb(0, 0, 0);
+  border-radius: 5px;
+  transition-duration: .3s; /*on applique un temps de 0.3s entre le moment ou le button est en style croix, et le moment ou il est style burger*/
+}
+#checkbox:checked + .toggle #bar1 { /*on vÃƒÂ©rifie si le checkbox est valide pour ensuite pouvoir appliquer la transformation*/
+  transform: rotate(-45deg);/*on dÃƒÂ©finit que la barre tourne de -45deg*/
+  transition-duration: .3s; /*on applique un temps de 0.3s entre le moment ou le button est en style burger, et le moment ou il est style croix*/
+  transform-origin: right;
+}
+#checkbox:checked + .toggle #bar2 {
+  opacity: 0;/*on applique une opacitÃƒÂ© de 0 pour cacher la deuxieme bar et crÃƒÂ©er notre croix*/
+  transition-duration: .3s;/*on applique un temps de 0.3s entre le moment ou le button est en style burger, et le moment ou il est style croix*/
+}
+#checkbox:checked + .toggle #bar3 {
+  transform: translateY(2px) rotate(45deg);/*on dÃƒÂ©finit que la barre tourne de 45deg et qu'elle se place 1px vers le haut pour s'aligner a la 1ere barre*/
+  transform-origin: right;/*on dÃƒÂ©finit que les rotations se feront en rapport sur l'axe de droite*/
+  transition-duration: .3s;/*on applique un temps de 0.3s entre le moment ou le button est en style burger, et le moment ou il est style croix*/
+}
+.menu1{
+  display: none; /*on cache notre page menu*/
+  z-index: 100;
+}
+.active{
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.5);/*on applique un arriere plan assombri pour que le teste et le button soit visible*/
+  backdrop-filter: blur(15px); /*on applique un flou au fond d'ÃƒÂ©cran*/
+  height: 100vh;  
+  width: 100%;
+}
+
+.menuactiver{ /*on dÃƒÂ©finit que la profondeur du button est supÃƒÂ©rieur Ãƒ  la page menu pour faire en sorte qu'il soit visible*/ 
+    position: absolute;
+    z-index: 2;
+}
+.menu-header{
+  font-size: 25px;
+  font-family: "Lulo Clean One Bold";
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+.menu2{
+  display: inline-flex;
+  flex-direction: column;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.formulaire{
+  bottom: 92%;
+  right: 60%;
+  background-color: #00000000;
+}
+
+/*page accueil*/
+.dessin-accueil{
+  position: absolute;
+  height: 100%;
+  width: auto;
+  top: 0;
+  z-index: -1;
+}
+#titre-accueil{
+  text-align: center;
+  font-size: 75px;
+  top: 65%;
+}
+
+
+/*vueAnimation*/
+.animation {
+  padding-right: 10px;
+  border-right: 3px solid #7f2e3a;
+  width: 100%;
+}
+.lireplusmoins{
+  font-size: 20px;
+}
+.lireplusmoins:hover{
+  font-size: 20px;
+}
+.titre{
+  font-size: 35px;
+}
+.pdescription{
+  font-size: 20px;
+}
+.nav {
+  position: absolute;
+  top: 90%;
+  transform: translateY(-50%);
+  color: #7f2e3a;
+  border: none;
+  height: 85px;
+  font-size: 75px;
+  width: 35px;
+  padding: 5px;
+  cursor: pointer;
+}
+.next {
+  right: 10px;
+}
+
+
+
+/*vueIllustration*/
+.carousel-illustration-description{
+  font-size: 13px;
+}
+.illustration  {
+  padding-right: 10px;
+  border-right: none;
+  width: 100%;
+  height: auto;
+}
+.verticali{
+  height: 10%;
+  width: auto;
+}
+.carre{
+  height: 100%;
+}
+
+
+
+
+
+
+/*vueIllustration*/
+.carousel-illustration-description{
+  font-family: "Lulo Clean One Bold";
+  padding-left: 20px; 
+  animation: left 0.5s ease;
+}
+.image{
+  text-align: center;
+}
+.illustration  {
+  padding-right: 10px;
+  border-right: none;
+  cursor: pointer;
+}
+.verticali{
+  width: 80%;
+}
+.carre{
+  height: 100%;
+}
+.agrandir {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #7f2e3a83;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+.agrandir>img {
+  max-width: 100%;
+  max-height: 100%;
+  cursor: pointer;
+}
+.hidden {
+  display: none;
+}
+
+
+
+
+/*vue about*/
+.titreabout{
+  font-size: 25px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  text-align: start;
+}
+.paragrapheabout{
+  font-size: 20px;
+}
+.listeabout{
+  font-size: 20px;
+}
+
+
+
+/*formulaire*/
+input[type=text], textarea, input[type=email] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  margin-right: 0px;
+  margin-left: 0px;
+  resize: vertical;
+  font-size: 20px;
+}
+label{margin-right: 0px;
+  margin-left: 0px;
+  width: 100%;
+font-size: 25px;}
+
+input[type=submit] {
+  background-color:  #7f2e3a;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.container {
+  font-family: "Lulo Clean One Bold";
+  box-sizing : border-box;
+  border-radius:5px;
+  background-color:#f2f2f2;
+  padding:20px;
+  /* redéfinition 400 + 2*20 */
+  max-width: 700px;
+  margin:0 auto;
+}
+.titreformulaire  {
+  color: #000000;
+  font-size: 30px;
+  width: 100%;
+}
+
+.erreur{
+  color: rgb(192, 57, 52) ;
+  font-size: 10px;
+  margin: 0;
+}
+
+
+
+
+
+input[type=submit] {
+  background-color: #7f2e3a;
+}
+.carousel-work-description{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  text-align: center;
+  width: 75%;
+  margin: auto;
+}
+.titrework{
+  font-size: 50px;
+  font-family: "Lulo Clean One Bold";
+  border-bottom: 3px solid #7f2e3a;
+  margin: 0;
+}
+
+.paragraphework{
+  font-size: 15px;
+  margin-top: 25px;
+  text-align: justify;
+  font-family: "Lulo Clean One Bold";
+}
+
+.titre2work{
+  font-size: 20px;
+  font-family: "Lulo Clean One Bold";
+}
+
+.downloadwork{
+  font-size: 15px;
+  font-family: "Lulo Clean One Bold";
+  margin: auto;
+  width: 50%;
+  border-top: 3px solid #7f2e3a;
+}
+.downloadwork>a{
+  padding: 10px;
+}
+
+}
+
+
