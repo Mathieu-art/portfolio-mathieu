@@ -8,6 +8,6 @@
       "src": "/index.php",
       "headers": { "Location": "/accueil.php" },
       "status": 307
-    },
+    }
   ]
 }
